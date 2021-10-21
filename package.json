@@ -1,0 +1,30 @@
+{
+  "name": "@kur4ge/hexo-delete-sth",
+  "version": "1.0.0",
+  "description": "A hexo plugin to delete some useless files before deployment.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kur4ge/hexo-delete-sth.git"
+  },
+  "keywords": [
+    "hexo",
+    "blog",
+    "asset",
+    "delete"
+  ],
+  "author": {
+    "name": "kur4ge",
+    "email": "kur4ge1337@gmail.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kur4ge/hexo-delete-sth/issues"
+  },
+  "homepage": "https://github.com/kur4ge/hexo-delete-sth#readme",
+  "dependencies": {
+  }
+}
