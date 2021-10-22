@@ -2,10 +2,9 @@
 var fs = require("fs");
 var path = require("path");
 
-hexo.extend.deployer.register('delete-sth', function cosHelper() {
+hexo.extend.deployer.register('delete-sth', function cosHelper(config) {
     // check configs
-    let cfgs = checkConfigs(this.config);
-    if (!cfgs) { return }
+    let cfgs = checkConfigs(config);
     cfgs.publicDir = this.public_dir;
     deleteFiles(cfgs, this.public_dir);
 });
@@ -48,20 +47,12 @@ function checkRules(cfgs, file) {
     return false;
 }
 function checkConfigs(config) {
-    let cfgs = config.deploy;
-    if (cfgs.type !== 'delete-sth' && cfgs.length > 0) {
-        cfgs.forEach((dConfig) => {
-            if (dConfig.type === 'delete-sth') {
-                cfgs = dConfig;
-            }
-        });
-    }
-    let deleteFiles = cfgs.deleteFiles || []
+    let deleteFiles = config.deleteFiles || []
     deleteFiles = deleteFiles.map((s) => {
         return s.replace(/\\/, '/').replace(/[-\/\\^$+?.()|[\]{}]/g, '\\$&');
     }).map(s => s.replace(/\*/g, '.*?')).map(s => new RegExp(`^${s}$`));
     return {
         deleteFiles: deleteFiles,
-        deleteEmptyFolder: Boolean(cfgs.deleteEmptyFolder)
+        deleteEmptyFolder: Boolean(config.deleteEmptyFolder)
     };
 }

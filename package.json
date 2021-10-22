@@ -1,6 +1,6 @@
 {
   "name": "@kur4ge/hexo-delete-sth",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A hexo plugin to delete some useless files before deployment.",
   "main": "index.js",
   "scripts": {

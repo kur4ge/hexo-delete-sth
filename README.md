@@ -19,4 +19,13 @@ deploy:
       - img/logo.svg    # delete img/logo.svg
       - *.html          # delete all html files
     deleteEmptyFolder: true # if folder is empty, delete it
+  - 
+    type: 'do-other'
+  -
+    type: 'delete-sth'
+    deleteFiles:  # 支持 * 语法
+      - *.png
+      - *.jpg
+    deleteEmptyFolder: true # if folder is empty, delete it
+
 ```
